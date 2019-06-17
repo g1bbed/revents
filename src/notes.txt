@@ -1,0 +1,7 @@
+1. Learn what react hooks are
+https://reactjs.org/docs/hooks-intro.html
+
+To upload to Github,
+Click Source Control, and click commit
+git remote add origin https://github.com/g1bbed/revents.git
+git push origin master  => to update
