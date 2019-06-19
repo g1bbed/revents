@@ -5,3 +5,6 @@ To upload to Github,
 Click Source Control, and click commit
 git remote add origin https://github.com/g1bbed/revents.git
 git push origin master  => to update
+
+Project uses semantic-ui over bootstrap,
+it uses a 16 grid instead of 12
