@@ -10,3 +10,10 @@ Project uses semantic-ui over bootstrap,
 it uses a 16 grid instead of 12
 
 learn how destructuring works-
+learn more about spread operator
+
+
+Keys are usually used for dynamic lists but are
+also useful here. In our case, we could use the user
+ID to recreate the email input any time a new user is selected:
+https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-controlled-component
