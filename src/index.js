@@ -2,32 +2,33 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./app/layout/App";
-import { Provider } from 'react-redux'
+import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import { configureStore } from "./app/store/configureStore";
+import ScrollToTop from "./app/common/util/ScrollToTop";
 
 const store = configureStore();
-
-console.log(store.getState());
 
 const rootEl = document.getElementById("root");
 
 let render = () => {
   ReactDOM.render(
     <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+      <BrowserRouter>
+        <ScrollToTop>
+          <App />
+        </ScrollToTop>
+      </BrowserRouter>
     </Provider>,
     rootEl
-    );
+  );
 };
 
 if (module.hot) {
-    module.hot.accept('./app/layout/App', () => {
-        setTimeout(render);
-    })
+  module.hot.accept("./app/layout/App", () => {
+    setTimeout(render);
+  });
 }
 
 render();
