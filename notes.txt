@@ -12,6 +12,9 @@ it uses a 16 grid instead of 12
 learn how destructuring works-
 learn more about spread operator
 
+enableReinitialize: boolian = 
+
+
 
 Keys are usually used for dynamic lists but are
 also useful here. In our case, we could use the user
