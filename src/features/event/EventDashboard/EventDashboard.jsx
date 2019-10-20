@@ -3,19 +3,17 @@ import { connect } from "react-redux";
 import { Grid } from "semantic-ui-react";
 import EventList from "../EventList/EventList";
 //UNIQUE ID FOR OBJECTS OF INPUT DATA
-import { createEvent, deleteEvent, updateEvent } from "../eventActions";
+import { createEvent, updateEvent } from "../eventActions";
 import LoadingComponent from "../../../app/layout/LoadingComponent";
 import EventActivity from "../EventActivity/EventActivity";
-import { firestoreConnect } from "react-redux-firebase";
+import { firestoreConnect, isLoaded } from "react-redux-firebase";
 
 const mapState = state => ({
-  events: state.firestore.ordered.events,
-  loading: state.async.loading
+  events: state.firestore.ordered.events
 });
 
 const actions = {
   createEvent,
-  deleteEvent,
   updateEvent
 };
 
@@ -25,8 +23,8 @@ class EventDashboard extends Component {
   };
 
   render() {
-    const { events, loading } = this.props;
-    if (loading) return <LoadingComponent inverted={false} />;
+    const { events } = this.props;
+    if (!isLoaded(events)) return <LoadingComponent inverted={false} />;
     return (
       <Grid>
         <Grid.Column width={10}>

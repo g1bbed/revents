@@ -23,7 +23,12 @@ const EventDetailedInfo = ({ event }) => {
             <Icon name="calendar" size="large" color="teal" />
           </Grid.Column>
           <Grid.Column width={15}>
-            <span>{event.date && format(event.date, "dddd do MMMM")}</span>
+            {event.date && 
+            <span>
+            {format(event.date.toDate(), "D MMM YYYY")} at{' '}
+            {format(event.date.toDate(), 'h:mm a')}
+            </span>
+          }
           </Grid.Column>
         </Grid>
       </Segment>
